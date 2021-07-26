@@ -23,7 +23,7 @@ async def storefile(c, m):
     # text
     text = ""
     if not m.photo:
-        text = "--**📁 File Details:**--\n\n"
+        text = "--**🗂 File Details:**--\n\n"
         text += f"**File Name:** `{media.file_name}`\n\n" if media.file_name else ""
         text += f"**Mime Type:** `{media.mime_type}`\n\n" if media.mime_type else ""
         text += f"**File Size:** `{humanbytes(media.file_size)}`\n\n" if media.file_size else ""
@@ -55,7 +55,7 @@ async def storefile(c, m):
     # making buttons
     buttons = [[
         InlineKeyboardButton(text="Open Url 🔗", url=url),
-        InlineKeyboardButton(text="Share Link ♻️", url=share_url)
+        InlineKeyboardButton(text="Share Link 👤", url=share_url)
         ],[
         InlineKeyboardButton(text="Delete 🗑", callback_data=f"delete+{msg.message_id}")
     ]]
