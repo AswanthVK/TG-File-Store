@@ -27,22 +27,22 @@ async def start(c, m, cb=False):
     # start text
     text = f"""Hey! {m.from_user.mention(style='md')}
 
-💡 ** I am Telegram File Store Bot**
+** I'm Telegram File Store Bot**
 
 `You can store your Telegram Media for permanent Link!`
 
 
-**👲 Maintained By:** {owner.mention(style='md')}
+𝖥𝗈𝗋 𝖬𝗈𝗋𝖾 𝖣𝖾𝗍𝖺𝗂𝗅𝗌 𝖲𝖾𝖾 𝖧𝖾𝗅𝗉.
 """
 
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Father 👨‍✈️', url=f"https://t.me/{owner_username}"),
-            InlineKeyboardButton('Help 💡', callback_data="help")
+            InlineKeyboardButton('Help 💡', callback_data="help"),
+            InlineKeyboardButton('About 📕', callback_data="about")
         ],
         [
-            InlineKeyboardButton('About 📕', callback_data="about")
+            InlineKeyboardButton('Close 🔐', callback_data="close")
         ]
     ]
 
