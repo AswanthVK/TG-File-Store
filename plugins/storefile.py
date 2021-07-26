@@ -23,15 +23,15 @@ async def storefile(c, m):
     # text
     text = ""
     if not m.photo:
-        text = "--**🗃️ File Details:**--\n\n"
-        text += f"📂 **File Name:** `{media.file_name}`\n\n" if media.file_name else ""
-        text += f"💽 **Mime Type:** `{media.mime_type}`\n\n" if media.mime_type else ""
-        text += f"📊 **File Size:** `{humanbytes(media.file_size)}`\n\n" if media.file_size else ""
+        text = "--**📁 File Details:**--\n\n"
+        text += f"**File Name:** `{media.file_name}`\n\n" if media.file_name else ""
+        text += f"**Mime Type:** `{media.mime_type}`\n\n" if media.mime_type else ""
+        text += f"**File Size:** `{humanbytes(media.file_size)}`\n\n" if media.file_size else ""
         if not m.document:
-            text += f"🎞 __Duration:__ `{TimeFormatter(media.duration * 1000)}`\n\n" if media.duration else ""
+            text += f"**Duration:** `{TimeFormatter(media.duration * 1000)}`\n\n" if media.duration else ""
             if m.audio:
-                text += f"🎵 __Title:__ `{media.title}`\n\n" if media.title else ""
-                text += f"🎙 __Performer:__ `{media.performer}`\n\n" if media.performer else ""
+                text += f"**Title:** `{media.title}`\n\n" if media.title else ""
+                text += f"**Performer:** `{media.performer}`\n\n" if media.performer else ""
     #text += f"__✏ Caption:__ `{m.caption}`\n\n" if m.caption else ""
     #text += "**--Uploader Details:--**\n\n\n"
     #text += f"__🦚 First Name:__ `{m.from_user.first_name}`\n\n"
@@ -55,7 +55,7 @@ async def storefile(c, m):
     # making buttons
     buttons = [[
         InlineKeyboardButton(text="Open Url 🔗", url=url),
-        InlineKeyboardButton(text="Share Link 👤", url=share_url)
+        InlineKeyboardButton(text="Share Link ♻️", url=share_url)
         ],[
         InlineKeyboardButton(text="Delete 🗑", callback_data=f"delete+{msg.message_id}")
     ]]
